@@ -9,4 +9,7 @@ const quotes = [
 
 // TODO 3: Create and export getRandomQuote function
 //Hint: export function getRandomQuote(){}
-
+export function getRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
