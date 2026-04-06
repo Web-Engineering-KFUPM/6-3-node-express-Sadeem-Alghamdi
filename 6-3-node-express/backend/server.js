@@ -13,3 +13,22 @@ app.use(cors());
 // TODO 5: Import and apply Morgan middleware
 import morgan from "morgan";
 app.use(morgan("dev"));
+
+
+// Import random.js file
+import { getRandomQuote } from "./quotes.js";
+
+// TODO 6.1: Create root route "/"
+app.get("/", (req, res) => {
+    res.send("Backend is running");
+});
+
+// TODO 6.2: Create "/api/quote" route
+app.get("/api/quote", (req, res) => {
+    res.json({ quote: getRandomQuote() });
+});
+
+// TODO 7: Start server using app.listen
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
